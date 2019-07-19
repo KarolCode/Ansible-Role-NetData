@@ -1,0 +1,6 @@
+---
+
+- name: Ensure NetData is started.
+  service:
+    name: "{{ netdata_demon_name }}"
+    state: started

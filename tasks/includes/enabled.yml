@@ -1,0 +1,6 @@
+---
+
+- name: Ensure NetData is enabled at boot.
+  service:
+    name: "{{ netdata_demon_name }}"
+    enabled: yes

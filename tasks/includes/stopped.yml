@@ -1,0 +1,6 @@
+---
+
+- name: Ensure NetData is stoped.
+  service:
+    name: "{{ netdata_demon_name }}"
+    state: stopped

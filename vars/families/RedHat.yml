@@ -1,0 +1,17 @@
+---
+
+netdata_list_packages_install:
+  - zlib-devel
+  - libuuid-devel
+  - libmnl-devel
+  - gcc
+  - make
+  - git
+  - autoconf
+  - autogen
+  - automake
+  - pkgconfig
+  - curl
+  - jq
+  - nodejs
+

@@ -1,0 +1,21 @@
+---
+
+- name: Updated source list.
+  become: yes
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+  when: ansible_os_family == "Debian"
+
+- name: Check the current version.
+  shell: |
+    netdata -v | awk '{print $2}'
+  args:
+    executable: "{{ netdata_shell }}"
+  changed_when: false
+  ignore_errors: yes
+  register: netdata_version_present
+
+- name: Information about versions NetData
+  debug:
+    msg: "Installed version: {{ netdata_version_present.stdout }}, Expected version: {{ netdata_version }}"

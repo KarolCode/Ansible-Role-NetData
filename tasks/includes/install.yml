@@ -1,0 +1,34 @@
+---
+
+- name: Install repo packages
+  become: yes
+  package:
+    state: present
+    name: "{{ netdata_list_repo_install }}"
+  when: netdata_list_repo_install | length > 0
+
+- name: Install NetData reguired packages
+  become: yes
+  package:
+    state: present
+    name: "{{ netdata_list_packages_install }}"
+
+
+- name: A catalog with a source code was created
+  file:
+    path: "{{ netdata_dest_path }}"
+    recurse: yes
+
+- name: Clone repo NetData
+  git:
+    repo: "{{ netdata_repo_url }}"
+    dest: "{{ netdata_dest_path }}"
+    version: "v{{ netdata_version }}"
+    force: yes
+
+- name: Compilation and installation NetData
+  shell: |
+    ./netdata-installer.sh --dont-wait
+  args:
+    chdir: "{{ netdata_dest_path }}"
+    executable: "{{ netdata_shell }}"

@@ -1,0 +1,28 @@
+---
+
+- block:
+  - include: includes/init.yml
+  - include: includes/check.yml
+  tags:
+    - netdata_install
+    - netdata_service
+    - netdata_check
+
+
+- include: includes/install.yml
+  when: not netdata_version_present.stdout is search(netdata_version)
+  tags:
+    - netdata_install
+
+
+- block:
+  - name: A resource was imported to turn the service started and stoped.
+    include: "includes/{{ netdata_service_is }}.yml"
+    when: netdata_service_is == "started" or netdata_service_is == "stopped"
+
+  - name: A resource was imported to turn the service enable and disable.
+    include: "includes/{{ netdata_when_boot }}.yml"
+    when: netdata_when_boot == "enabled" or netdata_when_boot == "disabled"
+  tags:
+    - netdata_service
+

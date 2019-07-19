@@ -1,0 +1,5 @@
+---
+
+- include: includes/init.yml
+
+- include: includes/stopped.yml

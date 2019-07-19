@@ -1,0 +1,2 @@
+netdata_list_repo_install:
+  - epel-release

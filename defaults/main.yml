@@ -1,0 +1,16 @@
+---
+
+apt_cache_valid_time: 1440
+
+netdata_demon_name: netdata
+
+netdata_service_is:
+netdata_when_boot:
+
+netdata_list_repo_install:
+netdata_list_packages_install:
+
+netdata_shell: /bin/bash
+netdata_version: 1.10.0
+netdata_dest_path: /usr/local/source/netdata
+netdata_repo_url: https://github.com/firehol/netdata.git
