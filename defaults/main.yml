@@ -7,7 +7,7 @@ netdata_demon_name: netdata
 netdata_service_is:
 netdata_when_boot:
 
-netdata_list_repo_install:
+netdata_list_repo_install: []
 netdata_list_packages_install:
 
 netdata_shell: /bin/bash

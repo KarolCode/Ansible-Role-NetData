@@ -3,7 +3,7 @@
 galaxy_info:
   role_name: netdata
   author: Karol Kaliszczak
-  description: The role responsible for installing the NetData daemon.
+  description: The role responsible for manage the NetData daemon.
   license: MIT
   min_ansible_version: 2.7
   github_branch: master
