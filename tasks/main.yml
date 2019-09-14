@@ -10,7 +10,7 @@
 
 
 - include: includes/install.yml
-  when: not netdata_version_present.stdout is search(netdata_version)
+  when: (netdata_version_present.stdout is defined ) and (not netdata_version_present.stdout is search(netdata_version))
   tags:
     - netdata_install
 

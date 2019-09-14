@@ -18,4 +18,4 @@
 
 - name: Information about versions NetData
   debug:
-    msg: "Installed version: {{ netdata_version_present.stdout }}, Expected version: {{ netdata_version }}"
+    msg: "Installed version: {{ netdata_version_present.stdout | default('') }}, Expected version: {{ netdata_version }}"

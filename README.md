@@ -18,7 +18,7 @@ The use of the role of ansible is the installation of NetData for many Linux dis
 ```yaml
 - name: netdata
   src: karolcode.netdata
-  version: "v0.1.1"
+  version: "v0.1.2"
 ```
 
 2. Run command: `ansible-galaxy install -r galaxy.yml`
@@ -32,7 +32,7 @@ The use of the role of ansible is the installation of NetData for many Linux dis
 ```yaml
 - name: netdata
   src: https://github.com/KarolCode/Ansible-Role-NetData
-  version: "v0.1.1"
+  version: "v0.1.2"
 ```
 
 2. Run command: `ansible-galaxy install -r galaxy.yml`
